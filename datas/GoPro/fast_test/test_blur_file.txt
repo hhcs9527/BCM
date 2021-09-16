@@ -1,0 +1,12 @@
+/home/hh/Desktop/GoPro/test/GOPR0384_11_00/blur/000001.png
+/home/hh/Desktop/GoPro/test/GOPR0384_11_00/blur/000002.png
+/home/hh/Desktop/GoPro/test/GOPR0384_11_00/blur/000003.png
+/home/hh/Desktop/GoPro/test/GOPR0384_11_00/blur/000004.png
+/home/hh/Desktop/GoPro/test/GOPR0384_11_00/blur/000005.png
+/home/hh/Desktop/GoPro/test/GOPR0384_11_00/blur/000006.png
+/home/hh/Desktop/GoPro/test/GOPR0384_11_00/blur/000007.png
+/home/hh/Desktop/GoPro/test/GOPR0384_11_00/blur/000008.png
+/home/hh/Desktop/GoPro/test/GOPR0384_11_00/blur/000009.png
+/home/hh/Desktop/GoPro/test/GOPR0384_11_00/blur/000010.png
+/home/hh/Desktop/GoPro/test/GOPR0384_11_00/blur/000011.png
+/home/hh/Desktop/GoPro/test/GOPR0384_11_00/blur/000012.png

@@ -1,0 +1,24 @@
+# Name / Method
+experiment_name: MPGAN_with_D_no_C
+
+# Some setting about training
+isTrain : True
+train_epoch : 200
+start_train_epoch : 0
+batch_size : 6
+image_size : 256
+learning_rate : 0.0001
+gpu : 0
+
+# GAN type setting
+isGAN : False
+gan_type : 'RaGAN'
+G : 'Patch_Based'
+D : 'Patch_Based'
+Norm : 'instance'
+
+# Loss hyperparameter
+lambda_content : 0
+lambda_pixel : 1
+lambda_adv : 1
+lambda_class : 0
