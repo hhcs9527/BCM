@@ -54,3 +54,8 @@ __For model testing, change the config with isTrain to False, then run following
 python main.py
 ```
 
+__We train CVPR 2021 paper MPRNet with such framework, and we reach 32.91 for PSNR__
+here is the reference link for implementation: https://github.com/hhcs9527/BRMv2-MPRNet
+
+
+
