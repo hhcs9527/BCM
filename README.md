@@ -1,42 +1,54 @@
-# Deep Stacked Multi-patch Hierarchical Network for Image Deblurring
-Pytorch Implementation of CVPR19 "[Deep Stacked Multi-patch Hierarchical Network for Image Deblurring](https://arxiv.org/pdf/1904.03468.pdf)" <br/>
+# BCM Framework for Image Deblurring
 
-![Pipeline of DMPHN](./docs/dmphn.png)
-
-Please download GoPro dataset into './datas'. <br/>
+Please download GoPro dataset into Desktop and modify the path in modifier.py and run
 https://drive.google.com/file/d/1H0PIXvJH4c40pk7ou6nAwoxuR4Qh_Sa2/view
-
-GoPro Pretrained models are stored in './checkpoints'. 
+```
+cd datas
+python modifier.py
+```
 
 __Requires.__
 ```
-pytorch-0.4.1
 numpy
 scipy
 scikit-image
+opencv
+```
+__For setting config, check the tempplate inside expConfig, you can set the custom deblur net here.__
+```
+# experiment Name / Method
+experiment_name: Patch_Deblur_FPN_VAE_PAC_content_condiser_c16
+
+# Some setting about training
+isTrain : True
+train_epoch : 100
+start_train_epoch : 0
+batch_size : 6
+image_size : 256
+gpu : 0
+learning_rate : 0.0001
+
+# deblur part
+# deblur net (including size) setting
+G : 'Patch_Deblur_FPN_VAE_PAC'
+channel : 16
+
+# reblur part
+# per-pixel conv size & recurrent time
+per_pix_kernel: 3
+Recurrent_times: 3
 ```
 
-__For model training, run following commands.__
+__For model training with specific config, run following commands.__
 
 ```
-python xxx.py -b 6
+python main.py
 ```
 
 
-__For model testing, copy test samples into './test_samples', then run following commands.__
+__For model testing, change the config with isTrain to False, then run following commands.__
 
 ```
-python xxx_test.py
+python main.py
 ```
-## Citation
-If you think this work is useful for your research, please cite the following paper.
 
-```
-@InProceedings{Zhang_2019_CVPR,
-author = {Zhang, Hongguang and Dai, Yuchao and Li, Hongdong and Koniusz, Piotr},
-title = {Deep Stacked Hierarchical Multi-Patch Network for Image Deblurring},
-booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-month = {June},
-year = {2019}
-}
-```
