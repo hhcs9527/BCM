@@ -9,13 +9,15 @@ python modifier.py
 
 __Requires.__
 ```
+pytorch (>= 0.4.1)
 numpy
 scipy
 scikit-image
 opencv
 ```
+
 __For setting config, check the tempplate inside expConfig, you can set the custom deblur net here.__
-```
+```python
 # experiment Name / Method
 experiment_name: Patch_Deblur_FPN_VAE_PAC_content_condiser_c16
 
