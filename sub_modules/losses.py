@@ -192,19 +192,6 @@ class DiscLossWGANGP():
 		return [self.loss_D, gradient_penalty]
 
 
-def init_loss(opt):
-	
-	pixel_loss = ContentLoss(nn.MSELoss().cuda())
-	content_loss = PerceptualLoss(nn.MSELoss().cuda())
-
-	if opt.gan_type == 'wgan-gp':
-		disc_loss = DiscLossWGANGP()
-	elif opt.gan_type == 'RaGAN':
-		disc_loss = DiscLoss(opt)
-
-	return disc_loss, content_loss, pixel_loss
-
-
 class CharbonnierLoss(nn.Module):
     """Charbonnier Loss (L1)"""
 
@@ -217,3 +204,16 @@ class CharbonnierLoss(nn.Module):
         # loss = torch.sum(torch.sqrt(diff * diff + self.eps))
         loss = torch.mean(torch.sqrt((diff * diff) + (self.eps*self.eps)))
         return loss
+
+
+def init_loss(opt):
+	
+	pixel_loss = ContentLoss(nn.MSELoss().cuda())
+	content_loss = PerceptualLoss(nn.MSELoss().cuda())
+
+	if opt.gan_type == 'wgan-gp':
+		disc_loss = DiscLossWGANGP()
+	elif opt.gan_type == 'RaGAN':
+		disc_loss = DiscLoss(opt)
+
+	return disc_loss, content_loss, pixel_loss

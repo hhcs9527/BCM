@@ -1,0 +1,21 @@
+# experiment Name / Method
+experiment_name: Patch_Deblur_FPN_VAE_PAC_content_condiser_c16
+
+# Some setting about training
+isTrain : True
+train_epoch : 100
+start_train_epoch : 0
+batch_size : 6
+image_size : 256
+gpu : 0
+learning_rate : 0.0001
+
+# deblur part
+# deblur net (including size) setting
+G : 'Patch_Deblur_FPN_VAE_PAC'
+channel : 16
+
+# reblur part
+# per-pixel conv size & recurrent time
+per_pix_kernel: 3
+Recurrent_times: 3

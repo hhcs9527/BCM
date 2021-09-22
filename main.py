@@ -5,6 +5,7 @@ from Trainer import Trainer
 
 class config():
     def __init__(self, experiment):
+        # training setting
         self.isTrain = experiment['isTrain']
         self.epochs = experiment['train_epoch']
         self.start_epoch = experiment['start_train_epoch']
@@ -13,23 +14,13 @@ class config():
         self.learning_rate = experiment['learning_rate']
         self.gpu = experiment['gpu']
         
-        self.isGAN = experiment['isGAN']
-        self.gan_type = experiment['gan_type']
+        # deblur net setting
         self.G = experiment['G']
-        self.image_D = experiment['image_D']
-        self.content_D = experiment['content_D']
-        self.alignment = experiment['alignment']
-        self.Norm = experiment['Norm']
         self.channel = experiment['channel']
-        self.Pixel_adaptive_conv = experiment['Pixel_adaptive_conv']
+
+        # reblur setting
         self.Recurrent_times = experiment['Recurrent_times']
         self.per_pix_kernel = experiment['per_pix_kernel']
-
-        # Loss hyperparameter
-        self.lambda_content = experiment['lambda_content']
-        self.lambda_pixel = experiment['lambda_pixel']
-        self.lambda_adv = experiment['lambda_adv']
-        self.lambda_offset = experiment['lambda_offset']
 
 
 if __name__ == '__main__':

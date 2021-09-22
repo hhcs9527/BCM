@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from sub_modules.attention_zoo import *
 
 class Decoder(nn.Module):
     def __init__(self, opt):

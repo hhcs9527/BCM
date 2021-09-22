@@ -33,15 +33,8 @@ class GoProDataset(Dataset):
         return len(self.blur_image_files)
 
     def __getitem__(self, idx):
-        #image_name = self.blur_image_files[idx][0:-1].split('/')
-        #print(self.blur_image_files[idx])
-        #blur_image = Image.open(os.path.join(image_name[0], image_name[1], image_name[2], image_name[3])).convert('RGB')
-        #sharp_image = Image.open(os.path.join(image_name[0], image_name[1], 'sharp', image_name[3])).convert('RGB')
-	    ####
         blur_image = Image.open(self.blur_image_files[idx].replace('\n', '')).convert('RGB')
         sharp_image = Image.open(self.sharp_image_files[idx].replace('\n', '')).convert('RGB')
-        ####
-
         
         if self.rotation:
             degree = random.choice([90, 180, 270])
@@ -49,9 +42,6 @@ class GoProDataset(Dataset):
             blur_image = transforms.functional.rotate(sharp_image, degree) 
 
         if self.color_augment:
-            #contrast_factor = 1 + (0.2 - 0.4*np.random.rand())
-            #blur_image = transforms.functional.adjust_contrast(blur_image, contrast_factor)
-            #sharp_image = transforms.functional.adjust_contrast(sharp_image, contrast_factor)
             blur_image = transforms.functional.adjust_gamma(blur_image, 1)
             sharp_image = transforms.functional.adjust_gamma(sharp_image, 1)                           
             sat_factor = 1 + (0.2 - 0.4*np.random.rand())
